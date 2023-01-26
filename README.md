@@ -2,8 +2,8 @@
 # testing changes
 Is this even working?
 Yes, it seems to be working.
-\n Direction 6 in VScode
-\n Direction 6 in GitHub
+Direction 6 in VScode
+Direction 6 in GitHub
 ## Notes
 I have used GitHub before but it was for game development
 so I didn't really understand it, and it was super janky
