@@ -17,3 +17,8 @@ be archived and a new one will begin. Other potential features could include let
 story posts or upload images to their own story contributions.
 ## Rough Sketch
 ![startup sketch](https://user-images.githubusercontent.com/100855392/215245603-c5aec671-88ba-4558-ac5d-82760b9ffb33.JPG)
+## Simon HTML Notes
+I learned quite a bit more about how different HTML files can link between each other, and I also learned a lot more
+about committing and pushing to GitHub when I am creating new files in VS Code. That gave me a bit of trouble, but
+I was able to figure it out and be able to write multiple files and have them show up in the repository after pushing
+them.
