@@ -22,3 +22,8 @@ I learned quite a bit more about how different HTML files can link between each 
 about committing and pushing to GitHub when I am creating new files in VS Code. That gave me a bit of trouble, but
 I was able to figure it out and be able to write multiple files and have them show up in the repository after pushing
 them.
+## Simon CSS Notes
+Even though I don't totally understand some of the code that was necessary, particularly for the design of the Simon
+play interface, I got a lot of experience using Bootstrap and actually seeing what different Bootstrap classes do
+to the elements on the webpage. I also had some fun looking up other Bootstrap button classes and switching the ones
+in the examples to other ones that I think fit better.
