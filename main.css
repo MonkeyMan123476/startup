@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+}
+
+header {
+    flex: 0 80px;
+}
+
+.navbar-brand {
+    padding-left: 0.5em;
+}
+
+.form-group {
+    padding-left: 3em;
+    padding-right: 40em;
+}
+
+menu .nav-item {
+    padding: 0 0.5em;
+}
+
+
+
+
+@media (max-height: 600px) {
+    main {
+      flex: 1 100vh;
+    }
+}
