@@ -18,6 +18,12 @@ header {
     color: #c9a959;
 }
 
+.navbar-nav {
+    color:#c9a959;
+    font-size: 12px;
+    padding-right:1em;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -26,8 +32,13 @@ main {
 .display {
     padding-left: 1.5em;
     padding-right: 1.5em;
-    flex: 1;
+    flex: 1.5;
     text-align: right;
+}
+
+.login-screen {
+    padding-top: 2.7em;
+    padding-bottom: 6em;
 }
 
 
@@ -40,12 +51,12 @@ h3 {
 }
 
 h4 {
-    padding-top:4em;
-    text-align: center;
+    color:#757575;
 }
 
 .logout {
-
+    padding-top:4em;
+    padding-bottom:6em;
 }
 
 .prev-post {
@@ -57,7 +68,7 @@ h4 {
 }
 
 .card-title {
-    flex:3.5;
+    flex:2;
     font-size: 14px;
 }
 
@@ -67,10 +78,14 @@ h4 {
 
 .btn-success {
     font-size: 11px !important;
+    flex:1;
+    margin-left:5px;
+    margin-right:5px;
 }
 
 .btn-danger {
     font-size: 11px !important;
+    flex:1;
 }
 
 .buttons {
@@ -84,13 +99,19 @@ h4 {
 }
 
 .likes {
-    flex: 1
+    flex: 1;
+    display:flex;
+    flex-direction:row;
 }
 
 .account {
     padding-left: 5em;
     padding-right: 5em;
     flex: 1;
+}
+
+.logout {
+    text-align:center;
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:visited {
