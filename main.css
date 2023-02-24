@@ -27,11 +27,69 @@ main {
     padding-left: 1.5em;
     padding-right: 1.5em;
     flex: 1;
+    text-align: right;
+}
+
+
+h3 {
+    text-align:left;
+    color:#000035;
+    font-family: 'Freehand', cursive;
+    font-size: 30px !important;
+    padding-bottom:0.8em;
+}
+
+h4 {
+    padding-top:4em;
+    text-align: center;
+}
+
+.logout {
+
+}
+
+.prev-post {
+    padding-bottom: 1.5em;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.card-title {
+    flex:3.5;
+    font-size: 14px;
+}
+
+.card-text {
+    font-size: 12px ;
+}
+
+.btn-success {
+    font-size: 11px !important;
+}
+
+.btn-danger {
+    font-size: 11px !important;
+}
+
+.buttons {
+    height: 37px;
+    display:flex;
+    background-color:#000035;
+    text-align: right;
+    padding-top: 0.3em;
+    padding-right: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.likes {
+    flex: 1
 }
 
 .account {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: 5em;
+    padding-right: 5em;
     flex: 1;
 }
 

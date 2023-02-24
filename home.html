@@ -9,6 +9,9 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous"
         />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
+        </style>
     </head>
 
     <body class="text-muted">
@@ -16,26 +19,55 @@
             <nav class="navbar fixed-top navbar-light" style="background-color:#000035">
                 <a class="navbar-brand" href="">Your Turn Story</a>
                 <menu class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Account</a></li>
                 </menu>
             </nav>
         </header>
 
         <main>
-
             <div class="display">
-
-
+                <h3>Once upon a time...</h3>
+                <!--Previous Posts-->
+                <div class="prev-post">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Story addition</p>
+                        </div>
+                        <div class="buttons">
+                            <h5 class="card-title">Other User</h5>
+                            <div class="likes">
+                                <button type="button" class="btn btn-sm btn-success">Like <span class="badge bg-secondary">12</span></button>
+                                <button type="button" class="btn btn-sm btn-danger">Disike <span class="badge bg-secondary">2</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prev-post">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Story addition</p>
+                        </div>
+                        <div class="buttons">
+                            <h5 class="card-title">Other User</h5>
+                            <div class="likes">
+                                <button type="button" class="btn btn-sm btn-success">Like <span class="badge bg-secondary">3</span></button>
+                                <button type="button" class="btn btn-sm btn-danger">Disike <span class="badge bg-secondary">7</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
                 <!--Story Post Entry-->
                 <div class="form-group">
                     <textarea rows="4" class="form-control" placeholder="Type Here"
                     minlength="75" maxlength="250"></textarea>
-                    <button type="submit" class="btn btn-primary">Post</button>
+                    <button type="submit" class="btn btn-lg btn-primary">Post</button>
                 </div>
             </div>
 
             <div class="account">
-                
+                <h4>currentemail@email.com</h4>
             </div>
         </main>
 
