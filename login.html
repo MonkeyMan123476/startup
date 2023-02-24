@@ -11,13 +11,42 @@
         />
     </head>
 
-    <body>
+    <body class="text-muted">
         <header class="container-fluid">
-            <nav class="navbar fixed-top navbar-light" style="background-color:#c8ffd2">
-                <a class="navbar-brand" href="#">Your Turn</a>
+            <nav class="navbar fixed-top navbar-light" style="background-color:#000035">
+                <a class="navbar-brand" href="">Your Turn Story</a>
             </nav>
         </header>
 
+        <main>
+
+            <div class="display">
+
+
+                <!--Disabled Story Post Entry-->
+                <div class="form-group">
+                    <textarea disabled rows="4" class="form-control" placeholder="Log in to write your piece of the story!"
+                    minlength="75" maxlength="250"></textarea>
+                </div>
+            </div>
+
+            <div class="account">
+                <form>
+                    <!--Email input-->
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <!--Password input-->
+                    <div class="form-group">
+                        <label for="passwordInput">Password</label>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                    </div>
+                    <a type="submit" class="btn btn-primary" href="home.html">Login</a>
+                    <a type="submit" class="btn btn-secondary" href="home.html">Create Account</a>
+                </form>
+            </div>
+        </main>
 
         
     </body>

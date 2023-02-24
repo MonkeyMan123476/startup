@@ -4,28 +4,56 @@ body {
     min-width: 375px;
 }
 
+.text-muted {
+    background-color:#c9a959;
+}
+
 header {
-    flex: 0 80px;
+    flex: 0 100px;
 }
 
-.navbar-brand {
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:hover {
     padding-left: 0.5em;
+    font-size: 30px !important;
+    color: #c9a959;
 }
 
-.form-group {
-    padding-left: 3em;
-    padding-right: 40em;
+main {
+    display: flex;
+    flex-direction: row;
 }
 
-menu .nav-item {
-    padding: 0 0.5em;
+.display {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    flex: 1;
+}
+
+.account {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    flex: 1;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    outline: none !important;
+    background-color:#000035 !important;
+}
+
+.btn-primary:hover {
+    background-color:#000020 !important;
+}
+
+label {
+    color:#000035;
 }
 
 
 
 
-@media (max-height: 600px) {
+
+@media (orientation: portrait) {
     main {
-      flex: 1 100vh;
+      flex-direction: column;
     }
 }
