@@ -133,6 +133,6 @@ label {
 
 @media (orientation: portrait) {
     main {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 }
