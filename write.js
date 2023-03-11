@@ -9,40 +9,25 @@ function getPlayerName() {
     return displayEmail;
 }
 
-function testPostText() {
-    if ('content' in document.createElement('template')) {
-        let postDisplay = document.querySelector(".previous-posts");
-        let postTemplate = document.querySelector("#post");
-        let clone = postTemplate.textContent.cloneNode(true);
-        
-        let storyText = document.querySelector("#postInput");
-        let storyAddition = clone.querySelector(".card-text");
-        storyAddition.textContent = storyText;
-
-        let emailDisplay = clone.querySelector(".card-email");
-        emailDisplay.textContent = getPlayerName();
-
-        postDisplay.appendChild(clone);
-    } else {
-        userEmailEl.textContent = "template not working";
-    }
-}
-
 function postText() {
-    let storyText = document.querySelector("#postInput");
+    let storyText = document.querySelector("#postInput").value;
 
-    let newPost = document.createElement("div");
-    newPost.setAttribute("class", "prev-post");
+    if (storyText.length >= 75) {
+        document.querySelector("#postInput").value = "";
 
-    let postDisplay = document.querySelector(".previous-posts");
-    postDisplay.appendChild(newPost);
+        let newPost = document.createElement("div");
+        newPost.setAttribute("class", "prev-post");
 
-    let card = document.createElement("div");
-    card.setAttribute("class", "card");
-    newPost.appendChild(card);
+        let postDisplay = document.querySelector(".previous-posts");
+        postDisplay.appendChild(newPost);
 
-    makeCardBody(card, storyText);
-    makeButtonBar(card);
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+        newPost.appendChild(card);
+
+        makeCardBody(card, storyText);
+        makeButtonBar(card);
+    }
 }
 
 function makeCardBody(card, storyText) {
