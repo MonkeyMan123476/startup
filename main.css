@@ -57,6 +57,7 @@ h4 {
 .logout {
     padding-top:4em;
     padding-bottom:6em;
+    text-align:center;
 }
 
 .prev-post {
@@ -108,10 +109,6 @@ h4 {
     padding-left: 5em;
     padding-right: 5em;
     flex: 1;
-}
-
-.logout {
-    text-align:center;
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:visited {

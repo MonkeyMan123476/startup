@@ -1,6 +1,10 @@
-const playerNameEl = document.querySelector('.user-email');
-playerNameEl.textContent = this.getPlayerName();
+const userEmailEl = document.querySelector('.user-email');
+userEmailEl.textContent = getPlayerName();
 
 function getPlayerName() {
-    return localStorage.getItem('emailAddress') ?? 'Unknown user';
+    let displayEmail = localStorage.getItem('emailAddress');
+    if (displayEmail === "") {
+        return "Unknown user";
+    }
+    return displayEmail;
 }
