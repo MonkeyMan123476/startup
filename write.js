@@ -8,3 +8,12 @@ function getPlayerName() {
     }
     return displayEmail;
 }
+
+function postText() {
+    const postDisplay = document.querySelector(".previous-posts");
+    const postTemplate = document.querySelector("#post");
+    const clone = postTemplate.textContent.cloneNode(true);
+    
+    let storyText = document.querySelector("#postInput");
+    
+}
