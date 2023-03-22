@@ -62,3 +62,6 @@ chmod +x deploy.sh makes a script executable
 
 # Startup JavaScript Notes
 I had to redo some portions of my original HTML in order to work in JavaScript, but I figured it out eventually. Adding in the simple, temporary login system was pretty easy because the Simon code had a good example. The biggest challenge in doing JavaScript was adding functionality for adding text posts to the HTML. At first I tried to use a template system, because each post's HTML has a lot of elements, so using the DOM to add each post element-by-element would take a lot of code. After trying to follow instructions for a template, however, I couldn't get it to work, so I started adding functions to add each element of the post. I figured it out, and it gave me a lot more experience with the DOM because I didn't completely understand it when doing the assignments. I also got a lot more experience writing JavaScript functions in addition to the creation and appending of elements, attributes, textContent, etc.
+
+## Simon Service Notes
+I studied the code immensely, and I still don't quite understand what the purpose of a lot of it is, but I definitely have learned a lot more about the topics by actually implementing them. I also got some experience using the debug session, which I thought was a cool way to be able to see exactly what each piece of code does.
