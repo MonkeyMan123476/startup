@@ -65,3 +65,6 @@ I had to redo some portions of my original HTML in order to work in JavaScript, 
 
 ## Simon Service Notes
 I studied the code immensely, and I still don't quite understand what the purpose of a lot of it is, but I definitely have learned a lot more about the topics by actually implementing them. I also got some experience using the debug session, which I thought was a cool way to be able to see exactly what each piece of code does.
+
+## Simon DB Notes
+Again, I tried my best to understand the code but a lot of it flew over my head. Despite this, I did learn a lot throughout the process of installing and utilizing MongoDB in different ways. Figuring out how to edit the /etc/environment file to put in the database credentials was also a challenge but I felt accomplished after I finally got it to work.
