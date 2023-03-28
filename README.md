@@ -70,3 +70,6 @@ I studied the code immensely, and I still don't quite understand what the purpos
 Again, I tried my best to understand the code but a lot of it flew over my head. Despite this, I did learn a lot throughout the process of installing and utilizing MongoDB in different ways. Figuring out how to edit the /etc/environment file to put in the database credentials was also a challenge but I felt accomplished after I finally got it to work.
 
 Initially, I did not have the environment variables set up completely correctly but I just went back and tried to figure out what the issue is and figured out what was wrong. I added the environment variables correctly and then had to change the MongoDB URL to be accessible from everywhere, and now Simon is working again!
+
+## Simon Login Notes
+This topic was really interesting to me and I enjoyed looking through the authorization code and figuring out how it all works. In high school I learned about password hashing and stuff like that so I liked seeing other layers of complexity added to a login system.
