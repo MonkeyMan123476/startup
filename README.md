@@ -73,3 +73,6 @@ Initially, I did not have the environment variables set up completely correctly 
 
 ## Simon Login Notes
 This topic was really interesting to me and I enjoyed looking through the authorization code and figuring out how it all works. In high school I learned about password hashing and stuff like that so I liked seeing other layers of complexity added to a login system.
+
+## Simon Websocket Notes
+Unlike a few of the previous concepts, I think I already have a pretty good idea of how to use WebSocket. I am excited to implement it into my startup, and I think I will use it for the likes/dislikes of each post. I really understood and liked studying all of the WebSocket code that allows it to determine when to close connections and keep them open, and I thought the way that it works is really fascinating. 
