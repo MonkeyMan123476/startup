@@ -14,15 +14,15 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
+// GetPosts
 apiRouter.get('/posts', (_req, res) => {
-  res.send(scores);
+  res.send(posts);
 });
 
-// SubmitScore
+// AddPost
 apiRouter.post('/post', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
+  posts = updateScores(req.body, scores);
+  res.send(post);
 });
 
 // Return the application's default page if the path is unknown

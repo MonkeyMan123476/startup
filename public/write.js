@@ -1,7 +1,7 @@
 const userEmailEl = document.querySelector('.user-email');
 userEmailEl.textContent = getEmail();
 
-addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com");
+addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com", 7, 2);
 
 function getEmail() {
     let displayEmail = localStorage.getItem('emailAddress');
@@ -15,12 +15,15 @@ function postText() {
     let storyText = document.querySelector("#postInput").value;
 
     if (storyText.length >= 75) {
-        addCard(storyText, getEmail());
+        addCard(storyText, getEmail(), 0, 0);
         document.querySelector("#postInput").value = "";
+        document.querySelector("#notify").textContent = "";
+    } else {
+        document.querySelector("#notify").textContent = "Your post must be at least 75 characters.";
     }
 }
 
-function addCard(storyText, userEmail) {
+function addCard(storyText, userEmail, likes, dislikes) {
 
     let newPost = document.createElement("div");
     newPost.setAttribute("class", "prev-post");
@@ -33,7 +36,7 @@ function addCard(storyText, userEmail) {
     newPost.appendChild(card);
 
     makeCardBody(card, storyText);
-    makeButtonBar(card, userEmail);
+    makeButtonBar(card, userEmail, likes, dislikes);
 }
 
 function makeCardBody(card, storyText) {
@@ -47,7 +50,7 @@ function makeCardBody(card, storyText) {
     cardBody.appendChild(storyAddition);
 }
 
-function makeButtonBar(card, userEmail) {
+function makeButtonBar(card, userEmail, likes, dislikes) {
     let buttonBar = document.createElement("div");
     buttonBar.setAttribute("class", "buttons");
     card.appendChild(buttonBar);
@@ -70,7 +73,7 @@ function makeButtonBar(card, userEmail) {
 
     let likeNumber = document.createElement("span");
     likeNumber.setAttribute("class", "badge bg-secondary");
-    likeNumber.textContent = 0;
+    likeNumber.textContent = likes;
     likeButton.appendChild(likeNumber);
 
 
@@ -83,8 +86,6 @@ function makeButtonBar(card, userEmail) {
 
     let dislikeNumber = document.createElement("span");
     dislikeNumber.setAttribute("class", "badge bg-secondary");
-    dislikeNumber.textContent = 0;
+    dislikeNumber.textContent = dislikes;
     dislikeButton.appendChild(dislikeNumber);
 }
-
-getPlayerName
