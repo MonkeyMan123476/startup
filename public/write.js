@@ -1,7 +1,9 @@
 const userEmailEl = document.querySelector('.user-email');
-userEmailEl.textContent = getPlayerName();
+userEmailEl.textContent = getEmail();
 
-function getPlayerName() {
+addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com");
+
+function getEmail() {
     let displayEmail = localStorage.getItem('emailAddress');
     if (displayEmail === "") {
         return "Unknown user";
@@ -13,21 +15,25 @@ function postText() {
     let storyText = document.querySelector("#postInput").value;
 
     if (storyText.length >= 75) {
+        addCard(storyText, getEmail());
         document.querySelector("#postInput").value = "";
-
-        let newPost = document.createElement("div");
-        newPost.setAttribute("class", "prev-post");
-
-        let postDisplay = document.querySelector(".previous-posts");
-        postDisplay.appendChild(newPost);
-
-        let card = document.createElement("div");
-        card.setAttribute("class", "card");
-        newPost.appendChild(card);
-
-        makeCardBody(card, storyText);
-        makeButtonBar(card);
     }
+}
+
+function addCard(storyText, userEmail) {
+
+    let newPost = document.createElement("div");
+    newPost.setAttribute("class", "prev-post");
+
+    let postDisplay = document.querySelector(".previous-posts");
+    postDisplay.appendChild(newPost);
+
+    let card = document.createElement("div");
+    card.setAttribute("class", "card");
+    newPost.appendChild(card);
+
+    makeCardBody(card, storyText);
+    makeButtonBar(card, userEmail);
 }
 
 function makeCardBody(card, storyText) {
@@ -41,14 +47,14 @@ function makeCardBody(card, storyText) {
     cardBody.appendChild(storyAddition);
 }
 
-function makeButtonBar(card) {
+function makeButtonBar(card, userEmail) {
     let buttonBar = document.createElement("div");
     buttonBar.setAttribute("class", "buttons");
     card.appendChild(buttonBar);
 
     let emailDisplay = document.createElement("h5");
     emailDisplay.setAttribute("class", "card-email");
-    emailDisplay.textContent = getPlayerName();
+    emailDisplay.textContent = userEmail;
     buttonBar.appendChild(emailDisplay);
 
     let reactionButtons = document.createElement("div");
@@ -80,3 +86,5 @@ function makeButtonBar(card) {
     dislikeNumber.textContent = 0;
     dislikeButton.appendChild(dislikeNumber);
 }
+
+getPlayerName

@@ -78,7 +78,8 @@ h3 {
 }
 
 .card-text {
-    font-size: 12px ;
+    font-size: 12px;
+    color:#444444;
 }
 
 .btn-success {
