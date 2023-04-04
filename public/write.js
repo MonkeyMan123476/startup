@@ -11,6 +11,22 @@ function getEmail() {
     return displayEmail;
 }
 
+// IDK STUFF
+async function loadPosts() {
+    const response = await fetch("/api/posts")
+    //const posts = await response.json()
+    const posts = [1, 2];
+  
+    // Modify the DOM to display the scores
+    for (let i=0; i<posts.length; i++) {
+        addCard("huh", "dude", 3, 4);
+    }
+
+}
+
+loadPosts();
+
+
 function postText() {
     let storyText = document.querySelector("#postInput").value;
 
@@ -18,13 +34,39 @@ function postText() {
         addCard(storyText, getEmail(), 0, 0);
         document.querySelector("#postInput").value = "";
         document.querySelector("#notify").textContent = "";
+        savePost(storyText, getEmail());
     } else {
         document.querySelector("#notify").textContent = "Your post must be at least 75 characters.";
     }
 }
 
-function addCard(storyText, userEmail, likes, dislikes) {
+async function savePost(text, email) { this
+    const newPost = { address: email, story: text, likes: 0, dislikes: 0};
+    try {
+        const response = await fetch('/api/post', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(newPost),
+        });
+  
+        // Store what the service gave us as the posts
+        const posts = await response.json();
+        localStorage.setItem('posts', JSON.stringify(scores));
+    } catch {
+        // If there was an error then just track scores locally
+        let posts = [];
+        const postsText = localStorage.getItem('posts');
+        if (postsText) {
+            posts = JSON.parse(postsText);
+        }
 
+        posts.splice(posts.length - 1, 0, newPost);
+
+        localStorage.setItem('posts', JSON.stringify(posts));
+    }
+}
+
+function addCard(storyText, userEmail, likes, dislikes) {
     let newPost = document.createElement("div");
     newPost.setAttribute("class", "prev-post");
 

@@ -21,7 +21,7 @@ apiRouter.get('/posts', (_req, res) => {
 
 // AddPost
 apiRouter.post('/post', (req, res) => {
-  posts = updateScores(req.body, scores);
+  posts = updatePosts(req.body, posts);
   res.send(post);
 });
 
@@ -33,3 +33,10 @@ app.use((_req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+
+let posts=[];
+function updatePosts(newPost, posts) {
+
+    
+}
