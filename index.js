@@ -22,7 +22,7 @@ apiRouter.get('/posts', (_req, res) => {
 // AddPost
 apiRouter.post('/post', (req, res) => {
   posts = updatePosts(req.body, posts);
-  res.send(post);
+  res.send(posts);
 });
 
 // Return the application's default page if the path is unknown
@@ -37,6 +37,7 @@ app.listen(port, () => {
 
 let posts=[];
 function updatePosts(newPost, posts) {
-
-    
+    posts.splice(posts.length - 1, 0, newPost);
+    posts.push(newPost);
+    return posts;
 }

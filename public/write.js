@@ -1,8 +1,6 @@
 const userEmailEl = document.querySelector('.user-email');
 userEmailEl.textContent = getEmail();
 
-addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com", 7, 2);
-
 function getEmail() {
     let displayEmail = localStorage.getItem('emailAddress');
     if (displayEmail === "") {
@@ -11,17 +9,18 @@ function getEmail() {
     return displayEmail;
 }
 
-// IDK STUFF
 async function loadPosts() {
     const response = await fetch("/api/posts")
-    //const posts = await response.json()
-    const posts = [1, 2];
+    const posts = await response.json()
   
-    // Modify the DOM to display the scores
-    for (let i=0; i<posts.length; i++) {
-        addCard("huh", "dude", 3, 4);
+    if (posts.length) {
+        // Modify the DOM to display the posts
+        for (const [i, post] of posts.entries()) {
+            addCard(post.story, post.address, post.likes, post.dislikes);
+        }
+    } else {
+        addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com", 7, 2);
     }
-
 }
 
 loadPosts();
@@ -51,7 +50,7 @@ async function savePost(text, email) { this
   
         // Store what the service gave us as the posts
         const posts = await response.json();
-        localStorage.setItem('posts', JSON.stringify(scores));
+        localStorage.setItem('posts', JSON.stringify(posts));
     } catch {
         // If there was an error then just track scores locally
         let posts = [];
