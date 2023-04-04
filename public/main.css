@@ -38,9 +38,14 @@ main {
 
 .login-screen {
     padding-top: 2.7em;
-    padding-bottom: 6em;
+    padding-bottom: 3.5em;
 }
 
+#random-quote {
+    padding-top: 2em;
+    color:#000035;
+    font-size:15px;
+}
 
 h3 {
     text-align:left;
