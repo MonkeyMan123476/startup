@@ -44,14 +44,14 @@ function postText() {
         savePost(storyText, getEmail());
 
         // Websocket broadcast
-        broadcastEvent(getEmail());
+        broadcastEvent(getEmail(), storyText);
     } else {
         document.querySelector("#notify").textContent = "Your story entry must be at least 75 characters.";
     }
 }
 
 async function savePost(text, email) { this
-    const newPost = { address: email, story: text, likes: 0, dislikes: 0};
+    const newPost = { address: email, story: text};
     try {
         const response = await fetch('/api/post', {
           method: 'POST',
@@ -76,7 +76,7 @@ async function savePost(text, email) { this
     }
 }
 
-function addCard(storyText, userEmail, likes, dislikes) {
+function addCard(storyText, userEmail) {
     let newPost = document.createElement("div");
     newPost.setAttribute("class", "prev-post");
 
@@ -88,7 +88,7 @@ function addCard(storyText, userEmail, likes, dislikes) {
     newPost.appendChild(card);
 
     makeCardBody(card, storyText);
-    makeUserBar(card, userEmail, likes, dislikes);
+    makeUserBar(card, userEmail);
 }
 
 function makeCardBody(card, storyText) {
@@ -102,7 +102,7 @@ function makeCardBody(card, storyText) {
     cardBody.appendChild(storyAddition);
 }
 
-function makeUserBar(card, userEmail, likes, dislikes) {
+function makeUserBar(card, userEmail) {
     let buttonBar = document.createElement("div");
     buttonBar.setAttribute("class", "buttons");
     card.appendChild(buttonBar);
@@ -111,35 +111,6 @@ function makeUserBar(card, userEmail, likes, dislikes) {
     emailDisplay.setAttribute("class", "card-email");
     emailDisplay.textContent = userEmail;
     buttonBar.appendChild(emailDisplay);
-
-    let reactionButtons = document.createElement("div");
-    reactionButtons.setAttribute("class", "likes");
-    buttonBar.appendChild(reactionButtons);
-
-    // Like Button
-    let likeButton = document.createElement("button");
-    likeButton.setAttribute("type", "button");
-    likeButton.setAttribute("class", "btn btn-sm btn-success");
-    likeButton.textContent = "Like";
-    reactionButtons.appendChild(likeButton);
-
-    let likeNumber = document.createElement("span");
-    likeNumber.setAttribute("class", "badge bg-secondary");
-    likeNumber.textContent = likes;
-    likeButton.appendChild(likeNumber);
-
-
-    // Dislike Button
-    let dislikeButton = document.createElement("button");
-    dislikeButton.setAttribute("type", "button");
-    dislikeButton.setAttribute("class", "btn btn-sm btn-danger");
-    dislikeButton.textContent = "Dislike";
-    reactionButtons.appendChild(dislikeButton);
-
-    let dislikeNumber = document.createElement("span");
-    dislikeNumber.setAttribute("class", "badge bg-secondary");
-    dislikeNumber.textContent = dislikes;
-    dislikeButton.appendChild(dislikeNumber);
 }
 
 configureWebSocket();
@@ -152,11 +123,12 @@ function configureWebSocket() {
       this.displayMsg("It's your turn to tell the story!");
     };
     this.socket.onclose = (event) => {
-      this.displayMsg("Connection closed.");
+      this.displayMsg("Connection to the story closed.");
     };
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
-      displayMsg(msg.user + " just added to the story!");
+      displayMsg(msg.user + " just added to the story! It's your turn!");
+      addCard(msg.story, msg.user, 0, 0);
     };
 }
 
@@ -164,9 +136,10 @@ function displayMsg(message) {
     document.querySelector("#update").textContent = message;
 }
 
-function broadcastEvent(email) {
+function broadcastEvent(email, text) {
     const event = {
       user: email,
+      story: text,
     };
     this.socket.send(JSON.stringify(event));
 }
