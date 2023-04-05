@@ -76,3 +76,7 @@ This topic was really interesting to me and I enjoyed looking through the author
 
 ## Simon Websocket Notes
 Unlike a few of the previous concepts, I think I already have a pretty good idea of how to use WebSocket. I am excited to implement it into my startup, and I think I will use it for the likes/dislikes of each post. I really understood and liked studying all of the WebSocket code that allows it to determine when to close connections and keep them open, and I thought the way that it works is really fascinating. 
+
+# Startup Service Notes
+Updated color scheme: #000035 #ceb26b
+I had a lot of trouble implementing the endpoints until I finally moved on to the database implementation, which cleaned it up instantly and made it work all of a sudden. I was very thankful for this, because I understood it a lot more than the basic endpoint stuff. I am very happy with how well I got the login functionality to work. I even took it a bit further than the simon login does, because I made it so that it can tell if either of the login text boxes are empty and won't let you create an account if that is the case. I couldn't think of any original ideas for using third-party endpoints, so I just had the login screen display an inspirational quote like in simon.
