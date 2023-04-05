@@ -9,6 +9,12 @@ function getEmail() {
     return displayEmail;
 }
 
+function logout() {
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = '/'));
+}
+
 async function loadPosts() {
     const response = await fetch("/api/posts")
     const posts = await response.json()
