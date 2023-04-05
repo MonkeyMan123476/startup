@@ -19,7 +19,7 @@ async function loadPosts() {
             addCard(post.story, post.address, post.likes, post.dislikes);
         }
     } else {
-        addCard("...there was an orangutan named Bartholomew living in the jungle. Bartholomew woke up one day to see a large, colorful Toucan stealing his food.", "PreviousUser@email.com", 7, 2);
+        addCard("...there was a monkey who craved pringles (pizza-flavored, to be exact). This monkey went to Target and bought some pringles (pizza-flavored, obviously).", "testuser@fakeemail.com", 7, 2);
     }
 }
 
