@@ -85,7 +85,7 @@ function addCard(storyText, userEmail, likes, dislikes) {
     newPost.appendChild(card);
 
     makeCardBody(card, storyText);
-    makeButtonBar(card, userEmail, likes, dislikes);
+    makeUserBar(card, userEmail, likes, dislikes);
 }
 
 function makeCardBody(card, storyText) {
@@ -99,7 +99,7 @@ function makeCardBody(card, storyText) {
     cardBody.appendChild(storyAddition);
 }
 
-function makeButtonBar(card, userEmail, likes, dislikes) {
+function makeUserBar(card, userEmail, likes, dislikes) {
     let buttonBar = document.createElement("div");
     buttonBar.setAttribute("class", "buttons");
     card.appendChild(buttonBar);
