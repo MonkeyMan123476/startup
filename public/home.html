@@ -33,9 +33,12 @@
                 <div class="previous-posts">
                     <!--Functions use this class to edit the DOM and add previous posts.-->
                 </div>
+                <div class="text-updates">
+                    <p id="update">It's your turn to tell the story!</p>
+                </div>
                 <!--Story Post Entry-->
                 <div class="form-group">
-                    <textarea rows="4" id="postInput" class="form-control" placeholder="Type here to add the next piece of the story! Must be between 75 and 250 characters long."
+                    <textarea rows="4" id="postInput" class="form-control" placeholder="Type here to add the next piece of the story. Must be between 75 and 250 characters long."
                     minlength="75" maxlength="250"> </textarea>
                     <p id="notify"></p>
                     <button type="submit" class="btn btn-lg btn-primary" onclick="postText()">Post</button>

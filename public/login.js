@@ -4,6 +4,17 @@ function login() {
     window.location.href = "home.html";
 }
 
+
+
+
+
+
+
+
+
+
+
+// Stuff for third party quote display
 function displayQuote(data) {
     fetch('https://api.quotable.io/random')
       .then((response) => response.json())

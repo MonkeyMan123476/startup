@@ -19,9 +19,11 @@ async function loadPosts() {
             addCard(post.story, post.address, post.likes, post.dislikes);
         }
     } else {
-        addCard("...there was a monkey who craved pringles (pizza-flavored, to be exact). This monkey went to Target and bought some pringles (pizza-flavored, obviously).", "testuser@fakeemail.com", 7, 2);
+        addCard("...there was a monkey named Jimmy Skibbons. Jimmy woke up one morning to see that someone had stolen his pizza-flavored pringles.", "testuser@fakeemail.com", 7, 2);
     }
+    document.querySelector("#postInput").value = "";
 }
+
 
 loadPosts();
 
@@ -35,7 +37,7 @@ function postText() {
         document.querySelector("#notify").textContent = "";
         savePost(storyText, getEmail());
     } else {
-        document.querySelector("#notify").textContent = "Your post must be at least 75 characters.";
+        document.querySelector("#notify").textContent = "Your story entry must be at least 75 characters.";
     }
 }
 
