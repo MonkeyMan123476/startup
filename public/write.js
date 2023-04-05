@@ -45,6 +45,7 @@ function postText() {
 
         // Websocket broadcast
         broadcastEvent(getEmail(), storyText);
+        displayMsg("You have successfully added to the story!");
     } else {
         document.querySelector("#notify").textContent = "Your story entry must be at least 75 characters.";
     }
