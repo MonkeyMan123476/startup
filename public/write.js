@@ -42,6 +42,9 @@ function postText() {
         document.querySelector("#postInput").value = "";
         document.querySelector("#notify").textContent = "";
         savePost(storyText, getEmail());
+
+        // Websocket broadcast
+        broadcastEvent(getEmail());
     } else {
         document.querySelector("#notify").textContent = "Your story entry must be at least 75 characters.";
     }
@@ -137,4 +140,33 @@ function makeUserBar(card, userEmail, likes, dislikes) {
     dislikeNumber.setAttribute("class", "badge bg-secondary");
     dislikeNumber.textContent = dislikes;
     dislikeButton.appendChild(dislikeNumber);
+}
+
+configureWebSocket();
+
+// WebSocket stuff
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg("It's your turn to tell the story!");
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg("Connection closed.");
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      displayMsg(msg.user + " just added to the story!");
+    };
+}
+
+function displayMsg(message) {
+    document.querySelector("#update").textContent = message;
+}
+
+function broadcastEvent(email) {
+    const event = {
+      user: email,
+    };
+    this.socket.send(JSON.stringify(event));
 }
