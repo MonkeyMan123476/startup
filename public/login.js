@@ -13,7 +13,7 @@ function displayQuote(data) {
   
         quoteEl.textContent = '"' + data.content + '\" - ' + data.author;
   
-        containerEl.appendChild(quoteEl);
+        //containerEl.appendChild(quoteEl);
     });
 }
 
