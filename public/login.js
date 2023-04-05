@@ -14,11 +14,19 @@
 })();
 
 async function loginUser() {
-    loginOrCreate(`/api/auth/login`);
+    if ((document.querySelector('#emailInput')?.value === "") || (document.querySelector('#passwordInput')?.value === "")) {
+        document.querySelector('#error-message').textContent = "Please enter an email and a password.";
+    } else {
+        loginOrCreate(`/api/auth/login`);
+    }
 }
   
 async function createUser() {
-    loginOrCreate(`/api/auth/create`);
+    if ((document.querySelector('#emailInput')?.value === "") || (document.querySelector('#passwordInput')?.value === "")) {
+        document.querySelector('#error-message').textContent = "Please enter an email and a password.";
+    } else {
+        loginOrCreate(`/api/auth/create`);
+    }
 }
 
 async function loginOrCreate(endpoint) {
@@ -37,10 +45,7 @@ async function loginOrCreate(endpoint) {
       localStorage.setItem('emailAddress', userName);
       window.location.href = 'home.html';
     } else {
-    //   const modalEl = document.querySelector('#msgModal');
-    //   modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-    //   const msgModal = new bootstrap.Modal(modalEl, {});
-    //   msgModal.show();
+        document.querySelector('#error-message').textContent = "Invalid.";
     }
 }
 
@@ -55,25 +60,11 @@ async function getUser(email) {
     return null;
 }
 
-
-
-
-
-
 // function login() {
 //     const emailEl = document.querySelector("#emailInput");
 //     localStorage.setItem("emailAddress", emailEl.value);
 //     window.location.href = "home.html";
 // }
-
-
-
-
-
-
-
-
-
 
 
 // Stuff for third party quote display
