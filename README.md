@@ -83,3 +83,25 @@ I had a lot of trouble implementing the endpoints until I finally moved on to th
 
 ## Simon React Notes
 I thought this deliverable for simon was really interesting, because it both complicated and simplified some things. Even though the react deliverable for my startup is now optional for extra credit, I still really liked walking through the steps to convert simon to react because it finally made me understand some of the react topics we have covered. If I decide to try coverting my startup then I know these instructions will help me. I had trouble getting simon to deploy, but after looking at the class discord, I figured out that I needed to do "npm install" first and then it was able to deploy no problem after I made the color changes and added my own GitHub link to the code.
+
+## Final Notes
+Cookies allow a server to store data on the client
+
+Standard HTTP headers: host, content-type, cookie, etc etc (NOT language)
+
+Yes, you CAN use Fetch in front-end and back-end code
+
+Purposes of JSX: Inject HTML into your JavaScript, componetize your HTML, allow for composability into HTML
+
+A Linux daemon starts when the computer is rebooted, executes independent of a user, example is PM2, (It CAN fork other processes)
+
+Hashing stored passwords is important because it improves security by making the password unreadable
+
+WebSocket is peer-to-peer instead of client-to-server
+
+Port 80 is reserved for HTTP
+
+HTTP status codes in the 300 range are for content redirects or caching
+
+"NPM install ws" adds a dependency to your package.json file, adds the websocket source code to the node_modules directory, and locks the version of the websocket package for your application, but does NOT add template code for websockets to your JavaScript
+
